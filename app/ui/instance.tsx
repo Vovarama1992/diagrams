@@ -73,7 +73,7 @@ export default function Instance(props: InstanceProps) {
     
 
     return (
-        <div className="flex flex-col justify-end relative mt-[10%] h-[80%] text-white text-2xl w-[18%]">
+        <div className="flex flex-col text-[12px] lg:text-[20px] justify-end relative mt-[10%] h-[80%] text-white text-2xl w-[18%]">
             <div
                 id={`ref-${item}`}
                 className="mb-[0px] flex relative overflow-hidden flex-col-reverse h-[auto] max-h-[100%]"
@@ -154,14 +154,22 @@ function ArrowFourth({arbottom}: {arbottom: number}) {
 }
 
 function Connection({left, connection, gap, first, second }: { left: number, connection: number, gap: number, first? : number, second?: number}) {
-    const diff = first || second || 0;
-    const value = diff > 0 ? `+${diff}` : diff == 0 ? '    0' : ` - ${diff}`;
+    let diff = first || second || 0;
+    
+    
+    const value =
+  diff > 1000 || diff < -1000 ? '...' :
+  diff > 0 ? `+${diff}` :
+  diff == 0 ? '0' :
+  ` - ${-diff}`;
+    const bg = diff >= 0 ? `url('./top.png')` : `url('./bottom.png')`;
+    const bcolor = diff >= 0 ? 'red' : 'green';
     return (
         
             <div className="absolute h-[1px] bg-red-500 top-[-100px] " style={{left: `${left}px`, width: `${connection + gap}px`}}>
                 
-                <div className="absolute left-[35%] top-[-10px] w-[65px] h-[35px] rounded-[14px] bg-red-500">
-                <div className="absolute left-[5px] top-[4px] w-[20px] h-[20px] " style={{backgroundImage: `url('./top.png')`,
+                <div className="absolute left-[35%] top-[-10px] w-[65px] h-[35px] rounded-[14px] " style={{background: bcolor}}>
+                <div className="absolute left-[5px] top-[4px] w-[20px] h-[20px] " style={{backgroundImage: bg,
                     borderRadius: '15px', 
                     backgroundSize: '100% 100%',
                 }} >

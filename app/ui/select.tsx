@@ -18,7 +18,7 @@ export default function Select() {
         
     }
     return (
-        <p className="absolute text-2xl left-[20px] top-[10px]">
+        <p className="absolute text-[16px] lg:text-2xl left-[2px] lg:left-[20px] top-[10px]">
             Количество пройденных тестов <select onChange={(e) => handleSelect(e.target.value)}>
             {tests.map((test, index) => (
         <option value={test} key={index}>{test}</option>

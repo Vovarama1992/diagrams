@@ -23,14 +23,15 @@ export default async function Page({
   const devsum = sum(res.dev);
   const testsum = sum(res.test);
   const prodsum = sum(res.prod);
-  const firstDiff = testsum - devsum;
+  const firstDiff = testsum - devsum
   const secondDiff = prodsum - testsum;
+  
   
   return (
     
         <>
           <Select />
-          <div className="flex relative  flex-row p gap-[20px] lg:gap-[60px]   w-[92%] h-[70%] border-green-500">
+          <div className="flex relative  flex-row p gap-[20px] lg:gap-[60px]   w-[92%] h-[57%] lg:h-[70%] border-green-500">
           
             <Instance {...res.dev} item='dev' first={firstDiff}/>
             
