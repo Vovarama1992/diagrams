@@ -2,7 +2,7 @@
 import './globals.css'
 const disccont = "absolute w-[120px] bottom-[7%]"
 const disclaimer = "absolute w-[30px]  h-[30px]  rounded-md";
-const relative = "absolute flex text-base lg:text-[16px] flex-col justify-center left-[20%] lg:left-[33%] top-[30%] whitespace-normal lg:whitespace-nowrap"
+const relative = "absolute flex text-base lg:text-[16px] flex-col justify-center left-[25%] lg:left-[33%] top-[30%] whitespace-normal lg:whitespace-nowrap"
 
 export default function RootLayout({
   children,
@@ -14,7 +14,7 @@ export default function RootLayout({
       <body className="absolute flex flex-col justify-center items-center top-[1%] left-[1%] w-[98%] lg:w-[1200px] lg:h-[900px] h-[98vh] border-2 border-green-500">
         
         {children}
-        <div className={`left-[5%] lg:left-[15%] ${disccont}`}>
+        <div className={`left-[0%] lg:left-[15%] ${disccont}`}>
           <div className={` bg-blue-200  ${disclaimer}`}>
            
         </div>

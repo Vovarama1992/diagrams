@@ -168,8 +168,8 @@ function Connection({left, connection, gap, first, second }: { left: number, con
         
             <div className="absolute h-[1px] bg-red-500 top-[-100px] " style={{left: `${left}px`, width: `${connection + gap}px`}}>
                 
-                <div className="absolute left-[35%] top-[-10px] w-[65px] h-[35px] rounded-[14px] " style={{background: bcolor}}>
-                <div className="absolute left-[5px] top-[4px] w-[20px] h-[20px] " style={{backgroundImage: bg,
+                <div className="absolute left-[20%] lg:left-[35%] top-[-10px] w-[35px] lg:w-[65px] h-[20px] lg:h-[35px] rounded-[14px] " style={{background: bcolor}}>
+                <div className="absolute left-[5px] top-[4px] w-[14px] lg:w-[20px] h-[14px] lg:h-[24px] " style={{backgroundImage: bg,
                     borderRadius: '15px', 
                     backgroundSize: '100% 100%',
                 }} >
