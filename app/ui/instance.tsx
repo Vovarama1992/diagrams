@@ -17,6 +17,7 @@ export default function Instance(props: InstanceProps) {
     const [leftSecond, setSecond] = useState(0);
     const[connectionWidth, setWidth] = useState(0);
     const [gap, setGap] = useState(0);
+    
     const firstDiff = first ?? undefined;
     const secondDiff = second ?? undefined;
     
@@ -154,6 +155,7 @@ function ArrowFourth({arbottom}: {arbottom: number}) {
 }
 
 function Connection({left, connection, gap, first, second }: { left: number, connection: number, gap: number, first? : number, second?: number}) {
+    const [show, setShow] = useState(false)
     let diff = first || second || 0;
     
     
@@ -166,9 +168,9 @@ function Connection({left, connection, gap, first, second }: { left: number, con
     const bcolor = diff >= 0 ? 'red' : 'green';
     return (
         
-            <div className="absolute h-[1px] bg-red-500 top-[-100px] " style={{left: `${left}px`, width: `${connection + gap}px`}}>
+           <> <div className="absolute h-[1px] bg-red-500 top-[-100px] " style={{left: `${left}px`, width: `${connection + gap}px`}}>
                 
-                <div className="absolute left-[20%] lg:left-[35%] top-[-10px] w-[35px] lg:w-[65px] h-[20px] lg:h-[35px] rounded-[14px] " style={{background: bcolor}}>
+                <div onClick={() => setShow(!show)} className="absolute left-[20%] lg:left-[35%] top-[-10px] w-[35px] lg:w-[65px] h-[20px] lg:h-[35px] rounded-[14px] " style={{background: bcolor}}>
                 <div className="absolute left-[5px] top-[4px] w-[14px] lg:w-[20px] h-[14px] lg:h-[24px] " style={{backgroundImage: bg,
                     borderRadius: '15px', 
                     backgroundSize: '100% 100%',
@@ -177,10 +179,15 @@ function Connection({left, connection, gap, first, second }: { left: number, con
                 </div>
                 <span className="display-inline ml-[35px] text-[15px]">{value}</span>
                 
+                
                 </div>
 
 
             </div>
+            <div className='absolute flex justify-center items-center left-[114px] lg:left-[180px] top-[-136px] text-red-500 bg-black ] w-[auto] h-[30px]' style={{display: `${show ? 'block' : 'none'}`, zIndex: 9999}}>
+            {diff}
+        </div></>
+            
         
     )
 }
